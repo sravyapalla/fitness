@@ -30,21 +30,21 @@ const ExerciseVideos = ({ videos, name }) => {
           <a
             key={index}
             className="exercise-video"
-            href={`https://www.youtube.com/watch?v=${item.video.videoId}`}
+             href={`https://www.youtube.com/watch?v=${item.id}`}
             target="_blank"
             rel="noreferrer"
           >
             <img
-              src={item.video.thumbnails[0].url}
-              alt={item.video.title}
+              src={item?.thumbnails?.[0]?.url}
+      alt={item?.title || 'Video'}
               style={{ borderRadius: '10px' }}
             />
             <Box>
               <Typography variant="h6" color="#000">
-                {item.video.title}
+               {item?.title}
               </Typography>
               <Typography variant="subtitle2" color="gray">
-                {item.video.channelName}
+                {item?.channel?.name}
               </Typography>
             </Box>
           </a>
